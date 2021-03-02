@@ -3,7 +3,12 @@ function Welcome(props) {
 }
 
 function App(){
-  return <Welcome name="Sara" />;
+  return(
+    <div>
+      <Welcome name="Sara" />
+      <Welcome name="Sofia" />
+    </div>
+  );
 }
 
 export default App;
