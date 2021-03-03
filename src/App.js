@@ -1,14 +1,42 @@
-function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
-}
+import React from 'react';
 
-function App(){
-  return(
-    <div>
-      <Welcome name="Sara" />
-      <Welcome name="Sofia" />
-    </div>
-  );
+class Timer extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      date:new Date()
+    };
+  }
+  //
+  componentDidMount(){
+    this.timerId = setInterval(() => {
+      this.tick();
+    }, 1000);
+  }
+  componentWillUnmount(){
+    clearInterval(this.timerId);
+  }
+  componentDidUpdate(){
+    console.log(this.state.date);
+    console.log(this);
+  }
+  //
+  tick(){
+    this.setState({
+      date : new Date()
+    });
+  }
+  //
+  render(){
+    return (
+      <div>
+        <h3>
+          {this.state.date.toLocaleTimeString()}
+        </h3>
+      </div>
+    );
+  }
 }
+//
 
-export default App;
+export default Timer;
