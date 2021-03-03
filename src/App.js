@@ -1,11 +1,34 @@
 import React from 'react';
 
+class Counter extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      counter : 0
+    }
+    //
+    this.click = this.click.bind(this);
+  }
+  //
+  click(e){
+    console.log(e);
+    this.setState((state, props)=>({
+        counter: state.counter + parseInt(props.increment)
+    }));
+  }
+  //
+  render(){
+    return (
+      <button onClick={this.click}>Count is : {this.state.counter}</button>
+    );
+  }
+}
+// 
 class Timer extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       date:new Date(),
-      counter : 0,
       date2:new Date()
     };
   }
@@ -19,14 +42,13 @@ class Timer extends React.Component{
     clearInterval(this.timerId);
   }
   componentDidUpdate(){
-    console.log(this.state.counter);
+    //console.log(this.state);
   }
   //
   tick(){
-    this.setState((state,props)=>({
-      date : new Date(),
-      counter:state.counter + parseInt(props.increment)
-    }));
+    this.setState({
+      date : new Date()
+    });
     /*this.setState(function(state, props) {
       return {
         counter: state.counter + props.increment
@@ -37,6 +59,7 @@ class Timer extends React.Component{
   render(){
     return (
       <div>
+        <Counter increment="1"/>
         <h3>
           {this.state.date.toLocaleTimeString()}
         </h3>
