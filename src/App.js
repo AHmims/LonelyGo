@@ -5,6 +5,7 @@ class Timer extends React.Component{
     super(props);
     this.state = {
       date:new Date(),
+      counter : 0,
       date2:new Date()
     };
   }
@@ -18,14 +19,19 @@ class Timer extends React.Component{
     clearInterval(this.timerId);
   }
   componentDidUpdate(){
-    // console.log(this.state.date);
-    // console.log(this.state);
+    console.log(this.state.counter);
   }
   //
   tick(){
-    this.setState({
-      date : new Date()
-    });
+    this.setState((state,props)=>({
+      date : new Date(),
+      counter:state.counter + parseInt(props.increment)
+    }));
+    /*this.setState(function(state, props) {
+      return {
+        counter: state.counter + props.increment
+      };
+    });*/
   }
   //
   render(){
