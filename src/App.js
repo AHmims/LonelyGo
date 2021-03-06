@@ -38,6 +38,18 @@ class ButtonB extends React.Component {
   }
 }*/
 
+function WarningBanner(props) {
+  if (!props.warn) {
+    return null;
+  }
+
+  return (
+    <div className="warning">
+      Warning!
+    </div>
+  );
+}
+
 class Button extends React.Component {
   constructor(props) {
     super(props);
@@ -61,6 +73,7 @@ class Button extends React.Component {
     // this doesn't work WTF
     /*let handler = <Handler state={buttonState} />;
     console.log(handler);*/
+    let testhmm = buttonState ? 69 : null;
     return (
       <div>
         {/* {handler} */}
@@ -69,6 +82,15 @@ class Button extends React.Component {
           {(buttonState) ? <StateA /> : <StateB />}
         </div>
         {button}
+        {
+          buttonState &&
+          <h5>bruh moment</h5>
+        }
+        {
+          testhmm &&
+          <h6>gharib</h6>
+        }
+        <WarningBanner warn={!buttonState} />
       </div>
     );
   }
