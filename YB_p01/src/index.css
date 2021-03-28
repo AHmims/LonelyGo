@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .blob{
+        @apply h-5 w-5 rounded-full overflow-hidden;
+    }
+    .blob>div{
+        @apply w-full h-full;
+    }
+    .red{
+        @apply bg-red-400;
+    }
+    .green{
+        @apply bg-green-400;
+    }
+    .orange{
+        @apply bg-amber-400;
+    }
+    .blue{
+        @apply bg-blue-400;
+    }
+    .violet{
+        @apply bg-violet-400;
+    }
+    /*  */
+
+}
+
+@tailwind utilities;
