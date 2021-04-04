@@ -6,10 +6,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'Inter': ['Inter', 'sans-serif']
+        'PlusJakarta': ['"Plus Jakarta Display"', 'sans-serif']
       },
       gridTemplateColumns: {
-        'cards': 'repeat(auto-fit, minmax(314px,1fr))'
+        'cards': 'repeat(auto-fit, minmax(314px,1fr))',
+        'cardsMobile': 'repeat(auto-fit, minmax(250px,1fr))'
       },
       gridTemplateRows: {
         'cards': 'max-content'
@@ -31,10 +32,13 @@ module.exports = {
       spacing: {
         '4.5': '18px',
         '5.5': '16px',
+        '5.75': '23px',
+        '6.5': '26px',
         '7.5': '30px',
         '8.5': '34px',
         '8.6': '35px',
         '12.2': '49px',
+        '57.5': '230px',
         'offCenter': '47%'
       },
       colors: {
@@ -47,7 +51,16 @@ module.exports = {
         rose: colors.rose,
         violet: colors.violet,
         emerald: colors.emerald,
-        teal: colors.teal
+        teal: colors.teal,
+        card: {
+          red: '#F2926C',
+          green: '#C3E972',
+          orange: '#FFC972',
+          blue: '#78DBEF',
+          violet: '#BFA0FD',
+          pink: '#F898CA',
+          black: '#161418'
+        }
       }
     },
   },
